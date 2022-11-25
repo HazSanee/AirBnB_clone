@@ -75,5 +75,3 @@ class FileStorage():
             json_dicts[key] = self.classes()[value['__class__']](**value)
 
         self.__objects = {**json_dicts}
-
-
