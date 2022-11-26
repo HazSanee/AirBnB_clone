@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""Module containing file strorage class definition"""
 import json
 import os
 
