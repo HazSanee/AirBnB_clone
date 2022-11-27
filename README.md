@@ -9,8 +9,8 @@ In this part, which is the first part, we worked on the backend of the project w
 Data (python objects) which would later serve as models in the fully developed web app, are generated and stored in a json file which are accessed with the help of the inbuilt json module in python.
 
 ## Learning Objectives
-At the end of this project, you are expected to be able to explain to anyone, without the help of Google:
-    - How to create a Python package
+At the end of this project, you are expected to be able to explain to anyone, without the help of Google: <br>
+    - How to create a Python package <br>
     - How to create a command interpreter in Python using the cmd module
     - What is Unit testing and how to implement it in a large project
     - How to serialize and deserialize a Class
