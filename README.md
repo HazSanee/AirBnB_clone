@@ -11,15 +11,15 @@ Data (python objects) which would later serve as models in the fully developed w
 ## Learning Objectives
 At the end of this project, you are expected to be able to explain to anyone, without the help of Google: <br>
     - How to create a Python package <br>
-    - How to create a command interpreter in Python using the cmd module
-    - What is Unit testing and how to implement it in a large project
-    - How to serialize and deserialize a Class
-    - How to write and read a JSON file
-    - How to manage datetime
-    - What is an UUID
-    - What is *args and how to use it
-    - What is **kwargs and how to use it
-    - How to handle named arguments in a function
+    - How to create a command interpreter in Python using the cmd module <br>
+    - What is Unit testing and how to implement it in a large project <br>
+    - How to serialize and deserialize a Class <br>
+    - How to write and read a JSON file <br>
+    - How to manage datetime <br>
+    - What is an UUID <br>
+    - What is *args and how to use it <br>
+    - What is **kwargs and how to use it <br>
+    - How to handle named arguments in a function <br>
 
 ## Description of the command interpreter:
 The interface of the application is just like the Bash shell except that this has a limited number of accepted commands that were solely defined for the purposes of the usage of the AirBnB website.
