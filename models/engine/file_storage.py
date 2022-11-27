@@ -43,21 +43,21 @@ class FileStorage():
         Returns a dictionary of valid classes and their references
         """
         from models.base_model import BaseModel
-        # from models.user import User
-        # from models.state import State
-        # from models.city import City
-        # from models.amenity import Amenity
-        # from models.place import Place
-        # from models.review import Review
+        from models.user import User
+        from models.state import State
+        from models.city import City
+        from models.amenity import Amenity
+        from models.place import Place
+        from models.review import Review
 
         classes = {
                     "BaseModel": BaseModel,
-                    # "User": User,
-                    # "State": State,
-                    # "City": City,
-                    # "Amenity": Amenity,
-                    # "Place": Place,
-                    # "Review": Review
+                    "User": User,
+                    "State": State,
+                    "City": City,
+                    "Amenity": Amenity,
+                    "Place": Place,
+                    "Review": Review
                     }
         return classes
 
@@ -70,7 +70,11 @@ class FileStorage():
             return
 
         with open(self.__file_path, 'r') as fd:
-            json_dicts = json.loads(fd.read())
+            content = fd.read()
+            if content == "":
+                return
+            else:
+                json_dicts = json.loads(content)
 
         for key, value in json_dicts.items():
             json_dicts[key] = self.classes()[value['__class__']](**value)

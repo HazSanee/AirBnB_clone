@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Module containing BaseModel class definition."""
+"""Module containing BaseModel class definition"""
 from datetime import datetime
 from models import storage
 import uuid
@@ -20,9 +20,14 @@ class BaseModel():
             self.updated_at = datetime.now()
             storage.new(self)
         else:
-            self.id = kwargs['id']
-            self.created_at = datetime.fromisoformat(kwargs['created_at'])
-            self.updated_at = datetime.fromisoformat(kwargs['updated_at'])
+            for key in kwargs:
+                if key == 'created_at':
+                    self.__dict__['created_at'] = datetime.fromisoformat(kwargs['created_at'])
+                elif key == 'updated_at':
+                    self.__dict__['updated_at'] = datetime.fromisoformat(kwargs['updated_at'])
+                else:
+                    self.__dict__[key] = kwargs[key]
+
 
     def __str__(self):
         """
