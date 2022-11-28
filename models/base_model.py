@@ -22,12 +22,13 @@ class BaseModel():
         else:
             for key in kwargs:
                 if key == 'created_at':
-                    self.__dict__['created_at'] = datetime.fromisoformat(kwargs['created_at'])
+                    self.__dict__['created_at'] = datetime\
+                        .fromisoformat(kwargs['created_at'])
                 elif key == 'updated_at':
-                    self.__dict__['updated_at'] = datetime.fromisoformat(kwargs['updated_at'])
+                    self.__dict__['updated_at'] = datetime\
+                        .fromisoformat(kwargs['updated_at'])
                 else:
                     self.__dict__[key] = kwargs[key]
-
 
     def __str__(self):
         """
