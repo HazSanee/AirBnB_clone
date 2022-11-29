@@ -12,6 +12,11 @@ class HBNBCommand(cmd.Cmd):
 
     prompt = '(hbnb) '
 
+    def default(self, line):
+        """Catch commands if nothing else matches then."""
+        # print("DEF:::", line)
+        self._precmd(line)
+
     def do_EOF(self, line):
         """
         End of file command to exit th program
@@ -44,6 +49,7 @@ class HBNBCommand(cmd.Cmd):
             print("** class doesn't exist **")
         else:
             newModel = classes[line]()
+            print(newModel.id)
             newModel.save()
             # print(f"Instance of {line} created and saved")
         # print("line: ", line)
@@ -178,11 +184,6 @@ class HBNBCommand(cmd.Cmd):
                 k for k in storage.all() if k.startswith(
                     words[0] + '.')]
             print(len(matches))
-
-    def default(self, line):
-        """Catch commands if nothing else matches then."""
-        # print("DEF:::", line)
-        self._precmd(line)
 
     def _precmd(self, line):
         """Intercepts commands to test for class.syntax()"""
